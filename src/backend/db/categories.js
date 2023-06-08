@@ -1,4 +1,3 @@
-import { v4 as uuid } from "uuid";
 
 /**
  * Category Database can be added here.
@@ -7,21 +6,33 @@ import { v4 as uuid } from "uuid";
 
 export const categories = [
   {
-    _id: uuid(),
-    categoryName: "fiction",
-    description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+    _id: "18ca0287-abd2-451e-85b5-c143483ffdda",
+    categoryName: "smartphones",
+    thumbnail: "https://i.dummyjson.com/data/products/4/thumbnail.jpg"
   },
   {
-    _id: uuid(),
-    categoryName: "non-fiction",
-    description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+    _id: "100ce75d-8d64-4d01-8b51-a3100ba17383",
+    categoryName: "laptops",
+    thumbnail: "https://i.dummyjson.com/data/products/8/thumbnail.jpg"
   },
   {
-    _id: uuid(),
-    categoryName: "horror",
-    description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+    _id: "bb6fb680-96d2-4951-baeb-96202b9dda3e",
+    categoryName: "fragrances",
+    thumbnail: "https://i.dummyjson.com/data/products/12/thumbnail.jpg"
   },
-];
+  {
+    _id: "c80384be-e788-4688-b0eb-03c2a5de5bcb",
+    categoryName: "skincare",
+    thumbnail: "https://i.dummyjson.com/data/products/16/thumbnail.jpg"
+  },
+  {
+    _id: "de84caac-a0a4-4580-8893-3c9b1b3f6fe0",
+    categoryName: "groceries",
+    thumbnail: "https://i.dummyjson.com/data/products/22/thumbnail.jpg"
+  },
+  {
+    _id: "f7659d31-cb19-40c7-af66-b51532e0d358",
+    categoryName: "home-decoration",
+    thumbnail: "https://i.dummyjson.com/data/products/30/thumbnail.jpg"
+  }
+]
