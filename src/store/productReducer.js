@@ -32,7 +32,7 @@ export const dataReducerFunction=(state,action)=>{
             category=>{
                 return {...category,checked:false};
             })  
-            return {...state,categoriesSort:categories,priceRange:1000,rating:0,priceSort:""};
+            return {...state,categoriesSort:categories,priceRange:2000,rating:0,priceSort:""};
         case "CLEARPRODUCTSWISHLISTANDCART":
             const clearProductsWishlistAndCart=state.products.map(product=>{
                 return {...product,isLiked:false,isAddedTocart:false};
