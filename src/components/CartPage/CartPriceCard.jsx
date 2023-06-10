@@ -8,7 +8,7 @@ export const CartPriceCard = ({data}) => {
 
     const billDetails=data.map((product)=>{
         const totalPrice=product.qty*product.price;
-        const totalDiscount=product.qty*product.discountPercentage;
+        const totalDiscount=(product.qty*product.discountPercentage).toFixed(2);
         const totalProductPrice=totalPrice-Math.round((totalPrice*totalDiscount)/100);
         totalSubAmount=totalSubAmount+totalProductPrice;
         return(

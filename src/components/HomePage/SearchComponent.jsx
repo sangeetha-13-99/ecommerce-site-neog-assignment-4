@@ -27,6 +27,8 @@ export const SearchComponent = () => {
             return;
           }
           setFilteredData(getAllFilteredProducts);
+        }else{
+          setFilteredData([]);
         }
       },200);
       return ()=>clearInterval(timer);

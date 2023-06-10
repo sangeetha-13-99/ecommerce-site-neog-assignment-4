@@ -20,7 +20,7 @@ export const CheckOutPage = () => {
         return false;
     })[0]?.address;
 
-    const renderAddresses=addresses.map(address=>{
+    const renderAddresses=addresses?.map(address=>{
         return (
             <label key={address._id}>
                 <input type="radio" name="useraddress" value={address._id} checked={currentAddress._id===address._id} onChange={(e)=>dispatchAddressData({type:'SETCURRENTADDRESS',payload:{currentAddress:address}})}/>
