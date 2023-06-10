@@ -6,17 +6,28 @@ import { useAuthContext } from '../../store/authContext';
 import { postCart } from '../../services/cart/cart-service';
 import { colors } from '../../constant';
 import { ProductsCardDiv } from './ProductsCardCss';
+import { useModalContext } from '../../store/modalContext';
 
 export const ProductsCard = ({product}) => {
 
     const navigate=useNavigate();
     const {AddToWishList,DeleteFromWishList,AddToCart}=useProductsContext();
+    const {modal,dispatchModalData}=useModalContext();
     const {authData:{isLoggedIN}}=useAuthContext();
 
+  // const loginHelperFunction=(token)=>{
+  //   if(!isLoggedIN || !token){
+  //     modal.searchModal && dispatchModalData({type:'CLOSEMODAL',payload:"searchModal"});
+  //     return navigate("/login",{state:"/product"});
+  //   }
+  // }
+  
+  
   const wishListHandler=async (e)=>{
     e.preventDefault();
     const token=localStorage.getItem('token');
     if(!isLoggedIN || !token){
+      modal.searchModal && dispatchModalData({type:'CLOSEMODAL',payload:"searchModal"});
       return navigate("/login",{state:"/product"});
     }
     if(!product.isLiked){
@@ -33,6 +44,7 @@ export const ProductsCard = ({product}) => {
     e.preventDefault();
     const token=localStorage.getItem('token');
     if(!isLoggedIN || !token){
+      modal.searchModal && dispatchModalData({type:'CLOSEMODAL',payload:"searchModal"});
       return navigate("/login",{state:"/product"});
     }
     if(!product.isAddedTocart){

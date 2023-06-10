@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useAddressContext } from '../../store/addressContext';
 import { Modal } from '../Modal/Modal';
 import { useAuthContext } from '../../store/authContext';
-import { useModalContext } from '../../store/modelContext';
+import { useModalContext } from '../../store/modalContext';
 import { FormCard } from '../../UI/FormCard';
 
 export const AddressForm = () => {

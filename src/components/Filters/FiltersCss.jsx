@@ -3,7 +3,7 @@ import styles from "styled-components";
 export const FiltersDiv=styles.div`
 
     display:flex;
-    justify-content:end;
+    justify-content:start;
     flex-direction:column;
     align-items:center;
     width:200px;

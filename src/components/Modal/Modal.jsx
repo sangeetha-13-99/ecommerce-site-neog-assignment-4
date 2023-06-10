@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import {createPortal} from "react-dom"
-import { useModalContext } from '../../store/modelContext'
+import { useModalContext } from '../../store/modalContext'
 import { colors } from '../../constant'
 const BackDropModal=({onClick})=>{
     

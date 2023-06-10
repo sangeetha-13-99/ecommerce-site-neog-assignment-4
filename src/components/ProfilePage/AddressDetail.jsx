@@ -2,7 +2,7 @@ import React from 'react'
 import { useAddressContext } from '../../store/addressContext'
 import { useAuthContext } from '../../store/authContext';
 import { AddressCard } from './AddressCard';
-import { useModalContext } from '../../store/modelContext';
+import { useModalContext } from '../../store/modalContext';
 import { AddressForm } from './AddressForm';
 import { colors } from '../../constant';
 import { AddressDetailDiv } from './AddressCardCss';

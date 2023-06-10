@@ -7,7 +7,7 @@ import { SearchComponent } from './SearchComponent'
 import { colors } from '../../constant'
 import { useAddressContext } from '../../store/addressContext'
 import { useProductsContext } from '../../store/productsContext'
-import { useModalContext } from '../../store/modelContext';
+import { useModalContext } from '../../store/modalContext';
 import { NavBarSection } from './Home';
 
 

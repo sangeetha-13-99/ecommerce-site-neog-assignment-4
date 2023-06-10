@@ -18,8 +18,8 @@ export const Main = () => {
   },[]);
 
   return (
-    <div>
-      <div id="modaloverlay"></div>
+    <Fragment>
+      
       {
       loading?
       <div>
@@ -43,6 +43,7 @@ export const Main = () => {
       </Fragment>
       }
       <ScrollToTop/>
-    </div>
+      <div id="modaloverlay"></div>
+    </Fragment>
   )
 }

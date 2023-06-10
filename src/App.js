@@ -16,7 +16,7 @@ import Mockman from "mockman-js"
 import { RequireAuth } from "./components/Utils/RequireAuth";
 import { ProfilePage } from "./pages/ProfilePage";
 import { AddressContextProvider } from "./store/addressContext";
-import { ModalContextProvider } from "./store/modelContext";
+import { ModalContextProvider } from "./store/modalContext";
 import { CheckOutPage } from "./pages/CheckOutPage";
 import { ThemeProvider } from "styled-components";
 import { colors,fontFamily } from "./constant";

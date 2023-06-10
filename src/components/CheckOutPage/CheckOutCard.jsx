@@ -38,7 +38,6 @@ export const CheckOutCard = () => {
         promises.push(deleteCartProduct(token,cart[i]._id))
       }
       const result=await Promise.all(promises);
-      console.log(result);
     }
     catch(error){
       console.error(error)

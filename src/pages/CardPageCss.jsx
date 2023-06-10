@@ -1,8 +1,6 @@
 import styles from "styled-components";
 
 export const CardPageDiv=styles.div`
-
-
     width:100%;
     margin:auto;
     .cart-all-div{
