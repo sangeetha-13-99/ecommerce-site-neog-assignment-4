@@ -1,3 +1,39 @@
-## E-Commerce Backend
+###### ECOMMERCE SITE ASSIGNMENT-4
 
-This folder contains the Mock Backend created for E-Commerce App. It contains different API end-points and database configuration for building E-Commerce; so that you can focus on building Frontend.
+<h1 align="center">SMART MART</h1>
+<p align="center">Smart Mart an Eccomerce Website.</p>
+
+### Features
+
+- Home Page
+- Product Listing Page
+- Single Product Page
+- Filters by
+- Price
+- Category
+- Ratings
+- Wishlist Management
+- Cart Management
+- Search
+- Loading & Alerts
+- Authentication
+  - Sign-up
+  - Login
+  - Logout
+- Address Management
+- Checkout
+
+### Built With
+
+  - React JS
+  - react styled components for CSS
+  - React Router for Routings
+  - React Context API and react hooks useState,useEffect,useReducer
+  - Mockbee for backend
+
+### Project Set Up
+```
+  git clone https://github.com/sangeetha-13-99/ecommerce-site-neog-assignment-4.git
+  npm install
+  npm start
+```
