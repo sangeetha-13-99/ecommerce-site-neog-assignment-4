@@ -36,7 +36,7 @@ export const CheckOutCardDiv=styles.div`
         font-family:${(props)=>props.theme.fontFamily.secondaryFont};
         border:none;
         background:black;
-        color:white;
+        color:${(props)=>props.theme.colors.colorWhite};
         padding:0.5rem 1rem;
         border-radius:20px;
         margin:0.3rem;

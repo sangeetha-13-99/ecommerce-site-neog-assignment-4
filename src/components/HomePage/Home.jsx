@@ -15,12 +15,13 @@ export const NavBarSection=styles.div`
     box-shadow: -1px 1px 1px #e9d5ff;
     padding:0.8rem;
     background:#faf5ff;
-    font-family: 'Varela Round', sans-serif;
+    font-family:${(props)=>props.theme.fontFamily.secondaryFont};
     top:0;
     z-index:100;
     .nav-main{
         a{
-            color:black;
+            
+            color:${(props)=>props.theme.colors.colorBlack};
             text-decoration:none;
           p{
             margin:0;
@@ -45,10 +46,10 @@ export const NavBarSection=styles.div`
    
     button{
         background:black;
-        color:white;
+        color:${(props)=>props.theme.colors.colorWhite};
         border-radius:2rem;
         border:none;
-        font-family: 'Varela Round', sans-serif;
+        font-family:${(props)=>props.theme.fontFamily.secondaryFont};
         font-weight:500;
         span{
             padding:0 0.5rem 0;
@@ -60,8 +61,8 @@ export const NavBarSection=styles.div`
             border-radius:50%;
             font-size:12px;
             padding:1px 5px;
-            background-color:black;
-            color:white;
+            background-color:${(props)=>props.theme.colors.colorBlack};
+            color:${(props)=>props.theme.colors.colorWhite};
             position:absolute;
             top:-6px;
             left:16px;
@@ -93,7 +94,7 @@ export const NavBarSection=styles.div`
                 position:absolute;
                 top:10vh;
                 right:0;
-                background-color:white;
+                background-color:${(props)=>props.theme.colors.colorWhite};
                 height:50vh;
                 width:100vw;
                 z-index:102;
@@ -108,11 +109,11 @@ export const NavBarSection=styles.div`
                     padding:1rem;
                     .nav-text{
                         padding-right:1rem;
-                        color:black;
+                        color:${(props)=>props.theme.colors.colorBlack};
                     }
                     button>.nav-text{
                         padding-right:0rem;
-                        color:white;
+                        color:${(props)=>props.theme.colors.colorWhite};
                     }
                 }
             }

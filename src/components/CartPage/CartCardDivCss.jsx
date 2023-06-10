@@ -23,7 +23,8 @@ export const CartCardDiv=styles.div`
         font-family:${(props)=>props.theme.fontFamily.primaryFont};
         font-size:1.5rem;
         font-weight:bold;
-        color:black
+        background:${(props)=>props.theme.colors.colorBlack};
+
     }
     .display-content{
         font-family:${(props)=>props.theme.fontFamily.secondaryFont};
@@ -35,7 +36,7 @@ export const CartCardDiv=styles.div`
         font-family:${(props)=>props.theme.fontFamily.secondaryFont};
         border:none;
         background:black;
-        color:white;
+        color:${(props)=>props.theme.colors.colorWhite};
         padding:0.5rem 1rem;
         border-radius:20px;
         margin:0.3rem;
@@ -46,8 +47,8 @@ export const CartCardDiv=styles.div`
     a{
         font-family:${(props)=>props.theme.fontFamily.secondaryFont};
        text-decoration:none;
-       color:black;
-       border-bottom:2px solid black; 
+       color:${(props)=>props.theme.colors.colorBlack};
+       border-bottom:2px solid ${(props)=>props.theme.colors.colorBlack};
        span{
             padding-right:0.5rem;
         }

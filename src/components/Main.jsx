@@ -4,9 +4,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { NavBar } from '../components/HomePage/NavBar'
 import { Fragment, useEffect, useState } from 'react'
-import ReactPlayer from 'react-player'
-import video from "../assets/LoadingVideo.mp4";
 import ScrollToTop from './Utils/ScrollToTop';
+import { colors } from '../constant';
+import { Loading } from './Loading/Loading';
 
 export const Main = () => {
   const [loading,setLoading]=useState(true);
@@ -19,11 +19,11 @@ export const Main = () => {
 
   return (
     <Fragment>
-      
       {
       loading?
       <div>
-        <ReactPlayer url={video} playing muted width="100%" height="100%" playbackRate={3}/>
+        <Loading/>
+        <i className="fa-solid fa-spinner fa-spin" style={{color: colors.colorGreen,fontSize:'5rem'}}/>
       </div>
       :<Fragment>
         <NavBar/>

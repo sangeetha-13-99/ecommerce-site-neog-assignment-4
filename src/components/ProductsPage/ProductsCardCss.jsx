@@ -26,7 +26,7 @@ export const ProductsCardDiv=styles.div`
         font-family:${(props)=>props.theme.fontFamily.primaryFont};
         font-size:1rem;
         font-weight:bold;
-        color:black
+        color:${(props)=>props.theme.colors.colorBlack};
     }
     .display-content{
         
@@ -38,8 +38,8 @@ export const ProductsCardDiv=styles.div`
     button{
         font-family:${(props)=>props.theme.fontFamily.secondaryFont};
         border:none;
-        background:black;
-        color:white;
+        background:${(props)=>props.theme.colors.colorBlack};;
+        color:${(props)=>props.theme.colors.colorWhite};
         padding:0.5rem 1rem;
         border-radius:20px;
         span{
@@ -49,8 +49,7 @@ export const ProductsCardDiv=styles.div`
     a{
         font-family:${(props)=>props.theme.fontFamily.secondaryFont};
        text-decoration:none;
-       color:black;
-       border-bottom:2px solid black; 
+       color:${(props)=>props.theme.colors.colorBlack};
        span{
             padding-right:0.5rem;
         }

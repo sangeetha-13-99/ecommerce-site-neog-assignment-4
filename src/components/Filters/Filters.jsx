@@ -6,10 +6,10 @@ import { PriceSort } from './PriceSort'
 import { useProductsContext } from '../../store/productsContext'
 import { FiltersDiv } from './FiltersCss'
 
-export const Filters = ({onClick}) => {
+export const Filters = ({onClick,show}) => {
   const {clearFilters}=useProductsContext();
   return (
-    <FiltersDiv>
+    <FiltersDiv style={{display:show?"flex":"none"}}>
         <div class="filters-clear">
             <h3>Filters</h3>
             <button onClick={clearFilters}>Clear</button>

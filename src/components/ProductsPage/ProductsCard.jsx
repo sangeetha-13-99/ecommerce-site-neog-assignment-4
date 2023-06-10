@@ -15,14 +15,6 @@ export const ProductsCard = ({product}) => {
     const {modal,dispatchModalData}=useModalContext();
     const {authData:{isLoggedIN}}=useAuthContext();
 
-  // const loginHelperFunction=(token)=>{
-  //   if(!isLoggedIN || !token){
-  //     modal.searchModal && dispatchModalData({type:'CLOSEMODAL',payload:"searchModal"});
-  //     return navigate("/login",{state:"/product"});
-  //   }
-  // }
-  
-  
   const wishListHandler=async (e)=>{
     e.preventDefault();
     const token=localStorage.getItem('token');
@@ -75,7 +67,11 @@ export const ProductsCard = ({product}) => {
             </div>
         </Link>
             {product.isAddedTocart?
-              <Link to="/cart">
+      
+      <Link to="/cart" onClick={
+          ()=>{
+            modal.searchModal && dispatchModalData({type:'CLOSEMODAL',payload:"searchModal"});
+          }}>
                 <span>Go to Cart</span>
                 <span className="fa-solid fa-cart-shopping" style={{color: colors.colorGreen}}></span>
               </Link>

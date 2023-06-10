@@ -1,8 +1,7 @@
 import styles from "styled-components";
 
 export const FiltersDiv=styles.div`
-
-    display:flex;
+   
     justify-content:start;
     flex-direction:column;
     align-items:center;
@@ -14,13 +13,13 @@ export const FiltersDiv=styles.div`
     padding:0 1rem;
     overflow-y:auto;
     z-index:101;
-    background-color:white;
+    background-color:${(props)=>props.theme.colors.colorWhite};
     border:1px solid ${(props)=>props.theme.colors.colorGray};
     h3{
         margin:0;
         padding:0.5rem 0;
         text-align:left;
-        font-family: 'Ysabeau', sans-serif;
+        font-family:${(props)=>props.theme.fontFamily.primaryFont};
     }
     
     .filters-clear{
@@ -30,8 +29,8 @@ export const FiltersDiv=styles.div`
         width:100%;
         button{
             border:none;
-            background-color:black;
-            color:white;
+            background-color:${(props)=>props.theme.colors.colorBlack};
+            color:${(props)=>props.theme.colors.colorWhite};
             padding:0.5rem 1rem;
             border-radius:20px;
         }
@@ -64,8 +63,7 @@ width:100%;
 }
 
 .category-label{
-    
-    font-family: 'Varela Round', sans-serif;
+    font-family:${(props)=>props.theme.fontFamily.secondaryFont};
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -93,8 +91,8 @@ ul{
    }
 } 
 .price-label{
-    
-    font-family: 'Varela Round', sans-serif;
+
+    font-family:${(props)=>props.theme.fontFamily.secondaryFont};
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -111,7 +109,7 @@ ul{
 export const RangeBarDiv=styles.div`
     width:100%;
     .range-div{
-        font-family: 'Varela Round', sans-serif;
+        font-family:${(props)=>props.theme.fontFamily.secondaryFont};
         display:flex;
         justify-content:space-between;
         align-items:center;
@@ -136,7 +134,7 @@ ul{
    }
 } 
 .rating-label{
-    font-family: 'Varela Round', sans-serif;
+    font-family:${(props)=>props.theme.fontFamily.secondaryFont};
     display:flex;
     justify-content:space-between;
     align-items:center;

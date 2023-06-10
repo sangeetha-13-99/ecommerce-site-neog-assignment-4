@@ -31,7 +31,6 @@ export const AddressForm = () => {
     }
     const clearAddress=()=>{
         setFormAddressData({
-           
             phone:"",
             street:"",
             city:"",
@@ -64,31 +63,31 @@ export const AddressForm = () => {
                 <div className="form-field-div">
                     <label className="form-label" htmlFor="street-address">Street</label>
                     <div className="form-input-div">
-                        <input type="text" id="street-address" name="street-address" autoComplete="street-address" placeholder=' 01-01/1  adrash balika colony'value={formAddressData.street} onChange={(e)=>setFormAddressData(prev=>({...prev,street:e.target.value}))}/>
+                        <input type="text" id="street-address" name="street-address" autoComplete="street-address" placeholder=' 01-01/1  adrash balika colony' value={formAddressData.street} onChange={(e)=>setFormAddressData(prev=>({...prev,street:e.target.value}))}/>
                     </div>
                 </div>
                 <div className="form-field-div">
                     <label className="form-label" htmlFor="city">City</label>
                     <div className="form-input-div">
-                         <input type="text" id="city" name="city" autoComplete="address-level2" value={formAddressData.city} onChange={(e)=>setFormAddressData(prev=>({...prev,city:e.target.value}))}/>
+                         <input type="text" id="city" name="city" autoComplete="address-level2" placeholder='hyderabad' value={formAddressData.city} onChange={(e)=>setFormAddressData(prev=>({...prev,city:e.target.value}))}/>
                     </div>
                 </div>
                 <div className="form-field-div">
                     <label className="form-label" htmlFor="state">State</label>
                     <div className="form-input-div">
-                        <input type="text" id="state" name="state" autoComplete="address-level1" value={formAddressData.state} onChange={(e)=>setFormAddressData(prev=>({...prev,state:e.target.value}))}/>
+                        <input type="text" id="state" name="state" autoComplete="address-level1" placeholder='Telangana' value={formAddressData.state} onChange={(e)=>setFormAddressData(prev=>({...prev,state:e.target.value}))}/>
                     </div>
                 </div>
                 <div className="form-field-div">
                     <label className="form-label" htmlFor="country">Country</label>
                     <div className="form-input-div">
-                        <input type="text" id="country" name="country" autoComplete="country-name" value={formAddressData.country} onChange={(e)=>setFormAddressData(prev=>({...prev,country:e.target.value}))}/>
+                        <input type="text" id="country" name="country" placeholder='India' autoComplete="country-name" value={formAddressData.country} onChange={(e)=>setFormAddressData(prev=>({...prev,country:e.target.value}))}/>
                     </div>
                 </div>
                 <div className="form-field-div">
                     <label className="form-label" htmlFor="postal-code">ZIP or postal code</label>
                     <div className="form-input-div">
-                        <input type="text" id="postal-code" name="postal-code" autoComplete="postal-code" value={formAddressData.pincode} onChange={(e)=>setFormAddressData(prev=>({...prev,pincode:e.target.value}))}/>
+                        <input type="text" id="postal-code" name="postal-code" placeholder='00000' autoComplete="postal-code" value={formAddressData.pincode} onChange={(e)=>setFormAddressData(prev=>({...prev,pincode:e.target.value}))}/>
                     </div>
                 </div>
                 <div  className="form-field-div">

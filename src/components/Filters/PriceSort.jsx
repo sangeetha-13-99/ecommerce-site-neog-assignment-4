@@ -13,7 +13,7 @@ export const PriceSort = () => {
             <span className='price-name'>Price-Low to High
               </span></label></li>
             <li><label className='price-label'><input className="price-radio" type="radio" onChange={()=>priceSortHandler("decrement")} checked={priceSort==="decrement"}/>
-            <span className='price-name'>Price-Low to High
+            <span className='price-name'>Price-High to Low
               </span></label></li>
         </ul>
     </PriceSortDiv>

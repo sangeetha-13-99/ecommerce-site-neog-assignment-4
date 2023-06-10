@@ -7,7 +7,7 @@ import { ProductPageDiv } from './ProductPageDivCss';
 import { colors } from '../constant';
 
 export const WishListPage = () => {
-  const [toggleFilters,setToggleFilters]=useState(true);
+  const [toggleFilters,setToggleFilters]=useState(false);
   const {data:{wishList,categoriesSort,priceRange,rating,priceSort}}=useProductsContext();
 
     const categoryNames=new Set();
@@ -50,7 +50,7 @@ export const WishListPage = () => {
     return (
       <ProductPageDiv>
       <button className='filters-button' onClick={toggleFiltersFunction}><span class="fa-solid fa-sliders" style={{color:colors.colorBlack}}></span></button>
-        {toggleFilters && <Filters onClick={toggleFiltersFunction}/>}
+      <Filters onClick={toggleFiltersFunction} show={toggleFilters}/>
         {filteredProducts.length===0?
         <div>
           <p className='results-text'>You Have no wishList Items Added</p>

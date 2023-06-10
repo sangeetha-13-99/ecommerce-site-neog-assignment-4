@@ -8,17 +8,19 @@ import { OrdersDetailsDiv } from './OrdersDetailsCss';
 export const OrdersDetail = () => {
    const {data:{orders}}=useProductsContext();
     const renderOrders=orders.map(({order,address})=>{
-      return (<div className='Card' key={order._id}>
+      return (<div className='card' key={order._id}>
         <CartPriceCard data={order}/>
-        <CheckOutAddressCard address={address}/>
+        <div className='order-address'>
+          <p>Delivered To</p>
+          <CheckOutAddressCard address={address}/>
+        </div>
       </div>)
     })
   return (
     <OrdersDetailsDiv>
       {
         orders.length>0?
-        <div>
-            <p className='results-text'>Your Orders</p>
+        <div className='order-details-div'>
             {renderOrders}
         </div>
         :

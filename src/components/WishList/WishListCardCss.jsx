@@ -22,7 +22,7 @@ margin:10px;
     font-family:${(props)=>props.theme.fontFamily.primaryFont};
     font-size:1rem;
     font-weight:bold;
-    color:black
+    color:${(props)=>props.theme.colors.colorBlack};
 }
 .display-content{
     
@@ -35,7 +35,8 @@ button{
     font-family:${(props)=>props.theme.fontFamily.secondaryFont};
     border:none;
     background:black;
-    color:white;
+    color:${(props)=>props.theme.colors.colorWhite};
+
     padding:0.5rem 1rem;
     border-radius:20px;
     margin:0.5rem 0;
@@ -44,11 +45,11 @@ button{
     }
 }
 a{
+    display:block;
+    text-decoration:none;
     font-family:${(props)=>props.theme.fontFamily.secondaryFont};
-   text-decoration:none;
-   color:black;
-   border-bottom:2px solid black; 
-   span{
+    color:${(props)=>props.theme.colors.colorBlack};
+    span{
         padding-right:0.5rem;
     }
 }

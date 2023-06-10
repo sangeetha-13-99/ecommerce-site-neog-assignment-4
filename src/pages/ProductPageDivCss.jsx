@@ -7,11 +7,9 @@ export const ProductPageDiv=styles.div`
         font-size:2.5rem;
         font-family:${(props)=>props.theme.fontFamily.primaryFont};
         color:${(props)=>props.theme.colors.colorPaleVoilet};
-
         a{
             text-decoration:none;
             color:${(props)=>props.theme.colors.colorBlack};
-           
         }
     }
     .products-all-div{

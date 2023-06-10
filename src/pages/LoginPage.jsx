@@ -12,10 +12,10 @@ import { FormCard } from "../UI/FormCard";
 export const LoginPage = () => {
   const {state}=useLocation();
   const navigate =useNavigate();
-  const {authData:{loader},dispatchAuthData}=useAuthContext();
   const loginEmailRef=useRef(null);
   const loginPasswordRef=useRef(null);
   const [loginError,setLoginError]=useState(null);
+  const {authData:{loader},dispatchAuthData}=useAuthContext();
   const [togglePassword,setTogglePassword]=useState({type:'password',show:false});
 
   const showPasswordToggler= () => {
@@ -80,7 +80,7 @@ export const LoginPage = () => {
         <div className="form-field-div">
           <label className="form-label" htmlFor="password">Password</label>
           <div className="form-input-div">
-            <input id="password" type={togglePassword.type} name="password" ref={loginPasswordRef}/>
+            <input id="password" type={togglePassword.type} name="password" placeholder="******" ref={loginPasswordRef}/>
             <span>
               {togglePassword.show ? <VisibilityIcon style={{color:colors.colorGreen}} onClick={showPasswordToggler}/>:
               <VisibilityOffIcon style={{color:colors.colorGreen}} onClick={showPasswordToggler}/>}

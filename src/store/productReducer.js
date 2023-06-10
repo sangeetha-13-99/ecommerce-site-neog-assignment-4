@@ -39,111 +39,131 @@ export const dataReducerFunction=(state,action)=>{
             });
             return {...state,products:clearProductsWishlistAndCart,cart:[],wishList:[]};
         case "SETWISHLIST":
-            const setWishListIds=action.payload.map((wProduct)=>wProduct._id);
-            const setWishListCart=state.cart.map((cproduct)=>{
-                if(setWishListIds.includes(cproduct._id)){
+            const setWishList_wishListIds=action.payload.map((wProduct)=>wProduct._id);
+            const setWishList_carttIds=state.cart.map((cproduct)=>cproduct._id);
+            const setWishList_cart=state.cart.map((cproduct)=>{
+                if(setWishList_wishListIds.includes(cproduct._id)){
                     return {...cproduct,isLiked:true};
                 }
                 return cproduct;
             });
-            const setWishListProducts=action.payload.map((wProduct)=>({...wProduct,isLiked:true}));
-            const setAllLikedProducts=state.products.map(product=>{
-                if(setWishListIds.includes(product._id)){
+            const setWishList_wishList=action.payload.map((wProduct)=>{
+                if(setWishList_carttIds.includes(wProduct._id)){
+                   return {...wProduct,isLiked:true,isAddedTocart:true};
+                }
+                return {...wProduct,isLiked:true,isAddedTocart:false};
+            });
+            const setWishList_products=state.products.map(product=>{
+                if(setWishList_wishListIds.includes(product._id)){
                     return {...product,isLiked:true};
                 }
                 return product;
             });
-            return {...state,products:setAllLikedProducts,cart:setWishListCart,wishList:setWishListProducts};
+            return {...state,products:setWishList_products,cart:setWishList_cart,wishList:setWishList_wishList};
         case "SETADDWISHLIST":
-            const setAddWishListCartProducts=state.cart.map((cproduct)=>{
+            const setAddWishList_cartIds=state.cart.map((cproduct)=>cproduct._id);
+            const setAddWishList_cart=state.cart.map((cproduct)=>{
                 if(cproduct._id===action.payload.productId){
                     return {...cproduct,isLiked:true};
                 }
                 return cproduct;
             });
-            const setAddWishListProducts=action.payload.wishListData.map((wproduct)=>{
-                if(wproduct._id===action.payload.productId){
-                    return {...wproduct,isLiked:true};
+            const setAddWishList_wishList=action.payload.wishListData.map((wproduct)=>{
+                if(setAddWishList_cartIds.includes(wproduct._id)){
+                    return {...wproduct,isLiked:true,isAddedTocart:true};
                 }
-                return wproduct;
+                return {...wproduct,isLiked:true,isAddedTocart:false};
             });
-            const setLikedProduct=state.products.map(product=>{
+            const setAddWishList_products=state.products.map(product=>{
                 if(product._id===action.payload.productId){
                     return {...product,isLiked:true};
                 }
-                return product
+                return product;
             });
-            return {...state,products:setLikedProduct,wishList:setAddWishListProducts,cart:setAddWishListCartProducts};
+            return {...state,products:setAddWishList_products,wishList:setAddWishList_wishList,cart:setAddWishList_cart};
         case "SETDELETEWISHLIST":
-            const setDeleteWishListCartProducts=state.cart.map((cproduct)=>{
+            const setDeleteWishList_cartProducts=state.cart.map((cproduct)=>{
                 if(cproduct._id===action.payload.productId){
                     return {...cproduct,isLiked:false};
                 }
                 return cproduct;
             });
-            const setUnlikedProduct=state.products.map(product=>{
+            const setDeleteWishList_wishList=state.wishList.filter((wproduct)=>wproduct._id!==action.payload.productId);
+            const setDeleteWishList_product=state.products.map(product=>{
                 if(product._id===action.payload.productId){
                     return {...product,isLiked:false};
                 }
                 return product
             });
-            return {...state,products:setUnlikedProduct,wishList:action.payload.wishListData,cart:setDeleteWishListCartProducts};
+            console.log(setDeleteWishList_wishList,setDeleteWishList_product)
+            return {...state,products:setDeleteWishList_product,wishList:setDeleteWishList_wishList,cart:setDeleteWishList_cartProducts};
         case "SETCART":
-            const cartProducts=action.payload.map((cProduct)=>cProduct._id);
-            const setCartWishListProducts=state.wishList.map((wproduct)=>{
-                if(cartProducts.includes(wproduct._id)){
+            const setCart_cartIds=action.payload.map((cProduct)=>cProduct._id);
+            const setCart_wishListIds=state.wishList.map((wproduct)=>wproduct._id);
+            const setCart_wishList=state.wishList.map((wproduct)=>{
+                if(setCart_cartIds.includes(wproduct._id)){
                     return {...wproduct,isAddedTocart:true};
                 }
                 return wproduct;
             });
-            const setCartProducts=action.payload.map((cproduct)=>({...cproduct,isAddedTocart:true}))
+            const setCart_cartProducts=action.payload.map((cproduct)=>{
+                if(setCart_wishListIds.includes(cproduct._id)){
+                    return {...cproduct,isAddedTocart:true,isLiked:true};
+                }
+                return {...cproduct,isAddedTocart:true,isLiked:false};
+            })
             const setAllCartProducts=state.products.map(product=>{
-                if(cartProducts.includes(product._id)){
+                if(setCart_cartIds.includes(product._id)){
                     return {...product,isAddedTocart:true};
                 }
                 return product;
             });
-            return {...state,products:setAllCartProducts,cart:setCartProducts,wishList:setCartWishListProducts};
+            return {...state,products:setAllCartProducts,cart:setCart_cartProducts,wishList:setCart_wishList};
         case "SETADDTOCART":
-            const setAddCartWishListProducts=state.wishList.map((wproduct)=>{
+            const setAddCart_wishListIds=state.wishList.map((wproduct)=>wproduct._id);
+            const setAddCart_wishListProducts=state.wishList.map((wproduct)=>{
                 if(wproduct._id===action.payload.productId){
                     return {...wproduct,isAddedTocart:true};
                 }
                 return wproduct;
             });
-            const setAddCartProducts=action.payload.cartData.map(cproduct=>{
-                return {...cproduct,isAddedTocart:true};
+            const setAddCart_cartProducts=action.payload.cartData.map(cproduct=>{
+                if(setAddCart_wishListIds.includes(cproduct._id)){
+                    return {...cproduct,isAddedTocart:true,isLiked:true};
+                }
+                return {...cproduct,isAddedTocart:true,isLiked:false};
             })
-            const setCartProduct=state.products.map(product=>{
+            const setAddCart_products=state.products.map(product=>{
                 if(product._id===action.payload.productId){
                     return {...product,isAddedTocart:true};
                 }
                 return product;
             });
-            return {...state,products:setCartProduct,cart:setAddCartProducts,wishList:setAddCartWishListProducts};
+            return {...state,products:setAddCart_products,cart:setAddCart_cartProducts,wishList:setAddCart_wishListProducts};
         case "SETDELETEFROMCART":
-            const setDeleteCartWishListProducts=state.wishList.map((wproduct)=>{
+            const setDeleteCart_wishList=state.wishList.map((wproduct)=>{
                 if(wproduct._id===action.payload.productId){
                     return {...wproduct,isAddedTocart:false};
                 }
                 return wproduct;
             });
-            const setUnCartProduct=state.products.map(product=>{
+            const setDeleteCart_products=state.products.map(product=>{
                 if(product._id===action.payload.productId){
                     return {...product,isAddedTocart:false};
                 }
                 return product;
             });
-            return {...state,products:setUnCartProduct,cart:action.payload.cartData,wishList:setDeleteCartWishListProducts};
+            const setDeleteCart_cart=state.cart.filter((cproduct)=>cproduct._id!==action.payload.productId);
+            return {...state,products:setDeleteCart_products,cart:setDeleteCart_cart,wishList:setDeleteCart_wishList};
         case "SETUPDATECARTPRODUCT":
-            const setUpdateCartProductWishList=state.wishList.filter((wProduct)=>{
+            const setUpdateCart_wishListProducts=state.wishList.filter((wProduct)=>{
                 if(wProduct.isAddedTocart){
                     return true;
                 }
                 return false;
             }).map((wProduct)=>wProduct._id);
             const setUpdateCart=action.payload.cartData.map((cproduct)=>{
-                if(setUpdateCartProductWishList.includes(cproduct._id)){
+                if(setUpdateCart_wishListProducts.includes(cproduct._id)){
                     return {...cproduct,isLiked:true,isAddedTocart:true};
                 }
                 return {...cproduct,isLiked:false,isAddedTocart:true};
@@ -171,7 +191,7 @@ export const intialDataReducer={
     wishList:[],
     cart:[],
     orders:[],
-    priceRange:1000,
+    priceRange:2000,
     rating:0,
     priceSort:"",
     

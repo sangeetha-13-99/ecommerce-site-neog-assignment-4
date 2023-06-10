@@ -4,9 +4,14 @@ import styles from "styled-components"
 export const ProductDetailCardDiv=styles.div`
     width:70%;
     height:60%;
-    margin:auto;
     display:flex;
     justify-content:space-between;
+    padding:1rem;
+    background:${(props)=>props.theme.colors.colorWhite};
+    border-right:1px solid ${(props)=>props.theme.colors.colorGray};
+    box-shadow:-1px 1px 1px ${(props)=>props.theme.colors.colorGray};
+    border-radius:20px;
+    margin:1rem auto;
     align-items:center;
 
     .product-detail{
@@ -24,18 +29,18 @@ export const ProductDetailCardDiv=styles.div`
     }
 
     .product-title{
-        font-family: 'Ysabeau', sans-serif;
+        font-family:${(props)=>props.theme.fontFamily.primaryFont};
         font-size:2rem;
         font-weight:bold;
-        color:black
+        color:${(props)=>props.theme.colors.colorBlack};
     }
     .product-description{
-        font-family: 'Varela Round', sans-serif;
+        font-family:${(props)=>props.theme.fontFamily.secondaryFont};
         font-size:1rem;
-        color:black
+        color:${(props)=>props.theme.colors.colorBlack};
     }
     .display-content{
-        font-family: 'Varela Round', sans-serif;
+        font-family:${(props)=>props.theme.fontFamily.secondaryFont};
         display:flex;
         justify-content:space-between;
         align-items:center;
@@ -43,7 +48,7 @@ export const ProductDetailCardDiv=styles.div`
     button{
         border:none;
         background:black;
-        color:white;
+        color:${(props)=>props.theme.colors.colorWhite};
         padding:0.5rem 1rem;
         border-radius:20px;
         span{
@@ -52,7 +57,7 @@ export const ProductDetailCardDiv=styles.div`
     }
     a{
        text-decoration:none;
-       color:black;
+       color:${(props)=>props.theme.colors.colorBlack};
        border-bottom:2px solid black; 
        span{
             padding-right:0.5rem;

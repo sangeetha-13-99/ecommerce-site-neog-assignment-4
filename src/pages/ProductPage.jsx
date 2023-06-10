@@ -7,7 +7,7 @@ import { ProductPageDiv } from './ProductPageDivCss';
 
 
 export const ProductPage = () => {
-  const [toggleFilters,setToggleFilters]=useState(true);
+  const [toggleFilters,setToggleFilters]=useState(false);
   const {data:{products,loading,categoriesSort,priceRange,rating,priceSort}}=useProductsContext();
 
     const categoryNames=new Set();
@@ -50,7 +50,7 @@ export const ProductPage = () => {
   return (
     <ProductPageDiv>
       <button className='filters-button' onClick={toggleFiltersFunction}><span class="fa-solid fa-sliders" style={{color:colors.colorBlack}}></span></button>
-     { toggleFilters && <Filters onClick={toggleFiltersFunction}/>}
+      <Filters onClick={toggleFiltersFunction} show={toggleFilters}/>
       {loading?<i className="fa-solid fa-spinner fa-spin fa-2xl" style={{color: colors.colorGreen}}></i>:
         <div className='products-all-div'>
           <p className='results-text'>Showing All Products {filteredProducts.length}</p>
