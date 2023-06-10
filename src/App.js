@@ -12,7 +12,7 @@ import { SignUpPage } from "./pages/SignUpPage";
 import { ErrorPage } from "./pages/ErrorPage";
 import { ProductsProvider } from "./store/productsContext";
 import { AuthContextProvider } from "./store/authContext";
-import Mockman from "mockman-js"
+// import Mockman from "mockman-js"
 import { RequireAuth } from "./components/Utils/RequireAuth";
 import { ProfilePage } from "./pages/ProfilePage";
 import { AddressContextProvider } from "./store/addressContext";

@@ -4,7 +4,6 @@ import { HeroBannerContentDiv } from './Home';
 
 
 export const HeroBannerContent = ({category}) => {
-    console.log(category)
   return (
     <HeroBannerContentDiv>
         <div key={category._id} className='banner-category-div'>

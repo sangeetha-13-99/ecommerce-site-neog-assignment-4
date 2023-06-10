@@ -1,5 +1,4 @@
-import React, { useCallback, useEffect, useRef }  from 'react'
-import debounce from 'lodash.debounce';
+import React, {useEffect}  from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import { useProductsContext } from '../../store/productsContext';
 import { ProductsCard } from '../ProductsPage/ProductsCard';

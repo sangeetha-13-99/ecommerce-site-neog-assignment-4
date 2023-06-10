@@ -29,7 +29,7 @@ export const ProductPage = () => {
       };
       return false;
     });
-    console.log(productsHtml)
+  
     const filterProducts= productsHtml.sort(
       function({price:price1},{price:price2}){ 
         if(priceSort==="increment"){
