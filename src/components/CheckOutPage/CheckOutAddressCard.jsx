@@ -5,12 +5,12 @@ export const CheckOutAddressCard = ({address,user}) => {
   return (
     <CheckOutAddressCardDiv>
         {user && <span><strong>{user.firstName} {user.lastName}</strong></span>}
-        <span><strong>Street No : </strong>{address.street}</span>
-        <span><strong>Pincode : </strong>{address.pincode} </span>
-        <span><strong>City : </strong>{address.city}</span>
-        <span><strong>State : </strong>{address.state}</span>
-        <span><strong>Country : </strong>{address.country}</span>
-        <span><strong>Phone : </strong>{address.phone}</span>
+        <p><strong>Street No : </strong>{address.street}</p>
+        <p><strong>Pincode : </strong>{address.pincode} </p>
+        <p><strong>City : </strong>{address.city}</p>
+        <p><strong>State : </strong>{address.state}</p>
+        <p><strong>Country : </strong>{address.country}</p>
+        <p><strong>Phone : </strong>{address.phone}</p>
     </CheckOutAddressCardDiv>
   )
 }

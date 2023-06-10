@@ -11,7 +11,7 @@ export const OrdersDetail = () => {
       return (<div className='card' key={order._id}>
         <CartPriceCard data={order}/>
         <div className='order-address'>
-          <p>Delivered To</p>
+          <p className='order-deliver'>Delivered To</p>
           <CheckOutAddressCard address={address}/>
         </div>
       </div>)

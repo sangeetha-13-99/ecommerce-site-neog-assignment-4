@@ -7,6 +7,7 @@ export const AddressCardDiv=styles.div`
     border-radius:20px;
     margin:10px;
     padding:1rem;
+    width:300px;
 h2{
     font-family:${(props)=>props.theme.fontFamily.secondaryFont};
 }
@@ -33,9 +34,34 @@ p{
         // font-size:1rem;
     }
 }
+.address-details{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    flex-direction:column;
+    p{  
+        font-size:12px;
+        width:200px;
+        & span:first-child{
+            font-weight:bold;
+        }
+        span{
+            display:inline-block;
+        }
+        display:flex;
+        justify-content:space-between;
+        align-items:center; 
+    }
+}
 `
 
 export const AddressDetailDiv=styles.div`
+.address-list{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    flex-wrap:wrap;
+}
 .address-button-2{
     font-family:${(props)=>props.theme.fontFamily.secondaryFont};
     border:none;

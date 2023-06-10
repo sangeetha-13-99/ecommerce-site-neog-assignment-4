@@ -20,16 +20,18 @@ export const ProfilePage = () => {
   }
   return (
     <ProfilePageDiv>
-      <div className='profile-div'>
-        <button className='tab-button' onClick={()=>tabShowHandler('user')}>User</button>
-        <button className='tab-button' onClick={()=>tabShowHandler('address')}>Address</button>
-        <button className='tab-button' onClick={()=>tabShowHandler('orders')}>Orders</button>
-      </div>
-      <div className='profile-div'>
-        {showTab==="user" && <UserDetail/>}
-        {showTab==="address" && <AddressDetail/>}
-        {showTab==="orders" && <OrdersDetail/>}
-      </div>
+        <div className='profile-div'>
+          <button className='tab-button' onClick={()=>tabShowHandler('user')}>User</button>
+          <button className='tab-button' onClick={()=>tabShowHandler('address')}>Address</button>
+          <button className='tab-button' onClick={()=>tabShowHandler('orders')}>Orders</button>
+        </div>
+        <div className='profile-outer-div'>
+          <div className='profile-div'>
+            {showTab==="user" && <UserDetail/>}
+            {showTab==="address" && <AddressDetail/>}
+            {showTab==="orders" && <OrdersDetail/>}
+          </div>
+        </div>
     </ProfilePageDiv>
   )
 }

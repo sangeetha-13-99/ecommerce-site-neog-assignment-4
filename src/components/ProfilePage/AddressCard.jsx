@@ -32,12 +32,12 @@ export const AddressCard = ({address}) => {
                 }
             </div>
             <div className='address-details'>
-                <p>Street No : {address.street}</p>
-                <p>Pincode : {address.pincode} </p>
-                <p>City : {address.city}</p>
-                <p>State:{address.state}</p>
-                <p>Country: {address.country}</p>
-                <p>Phone : {address.phone}</p>
+                <p><span>Street No:</span><span>{address.street}</span></p>
+                <p><span>Pincode: </span><span>{address.pincode}</span></p>
+                <p><span>City: </span><span>{address.city}</span></p>
+                <p><span>State: </span><span>{address.state}</span></p>
+                <p><span>Country: </span><span>{address.country}</span></p>
+                <p><span>Phone: </span><span>{address.phone}</span></p>
             </div>
         </div>
         <button className='address-button' onClick={editAddress}><span className="fa-solid fa-pen-to-square" style={{color:colors.colorGreen}}></span></button>

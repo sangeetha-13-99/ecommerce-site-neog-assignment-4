@@ -9,10 +9,11 @@ export const OrdersDetailsDiv=styles.div`
     flex-wrap:wrap;
 }
 .order-address{
-    width:240px;
-    p{
+    width:300px;
+    .order-deliver{
+        font-size:1rem;
         font-family:${(props)=>props.theme.fontFamily.primaryFont};
-        color:${(props)=>props.theme.colors.colorGreen};  
+        color:${(props)=>props.theme.colors.colorGreen};
     }
 }
 .results-text{
@@ -34,6 +35,7 @@ export const OrdersDetailsDiv=styles.div`
     box-shadow:-1px 1px 1px ${(props)=>props.theme.colors.colorGray};
     border-right:1px solid ${(props)=>props.theme.colors.colorBlack};
     border-radius:20px;
+    font-size:12px;
     @media only screen and (max-width:768px){
         width:100%;
     }

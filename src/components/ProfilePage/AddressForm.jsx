@@ -47,7 +47,7 @@ export const AddressForm = () => {
     const updateButtonHandler=()=>{
         dispatchAddressData({type:"UPDATEADDRESS",payload:{userId:user._id,addressId:editAddress.addressId,addressData:formAddressData}});
         dispatchAddressData({type:"SETEDITSTATE",payload:{isEdit:false,userId:'',addressId:'',formData:{}}});
-        dispatchModalData({type:"CLOSEMODAL",payload:"formModal"})
+        dispatchModalData({type:"CLOSEMODAL",payload:"formModal"});
     }
   return (
     <Modal modalType="formModal">

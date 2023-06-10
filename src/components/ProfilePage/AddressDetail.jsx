@@ -28,7 +28,9 @@ export const AddressDetail = () => {
         <AddressDetailDiv>
             {modal.formModal && <AddressForm />}
             <button className='address-button-2' onClick={()=>{dispatchModalData({type:"OPENMODAL",payload:"formModal"})}}><span className="fa-solid fa-plus" style={{color: colors.colorGreen}}></span>Add New Address</button>
-            {renderUserAddress}
+            <div className='address-list'>
+                {renderUserAddress}
+            </div>
         </AddressDetailDiv>
     )
 }

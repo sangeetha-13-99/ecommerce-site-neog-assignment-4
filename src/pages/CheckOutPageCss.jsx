@@ -1,9 +1,9 @@
 import styles from "styled-components";
 
 export const CheckOutPageDiv=styles.div`
-    display:flex;
-    justify-content:space-around;
-    align-items:start;
+    // display:flex;
+    // justify-content:space-around;
+    // align-items:start;
 
 .checkout-div,.checkout-div2{
     display:flex;
@@ -12,9 +12,6 @@ export const CheckOutPageDiv=styles.div`
     flex-direction:row;
     flex-wrap:wrap;
     padding:2rem; 
-    // @media only screen and (max-width:768px){
-    //     width:100%;
-    // }
 } 
 .checkout-div2{
     padding:0;
@@ -24,7 +21,7 @@ export const CheckOutPageDiv=styles.div`
     }
 }
 label{
-    
+    width:100%;
     background:${(props)=>props.theme.colors.colorWhite};
     border-radius:20px;
     margin:10px;
