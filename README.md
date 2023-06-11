@@ -3,6 +3,8 @@
 <h1 align="center">SMART MART</h1>
 <p align="center">Smart Mart an Eccomerce Website.</p>
 
+[Video DEMO](https://www.loom.com/share/a06fd9f0ead14466a56e34486b39f3ea) | [Live Site](https://smartmart-ecommerce.netlify.app/)
+
 ### Features
 
 - Home Page
