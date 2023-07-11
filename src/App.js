@@ -1,23 +1,23 @@
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
 
 import "./App.css";
-import { Main } from "./components/Main";
-import { HomePage } from "./pages/HomePage";
-import { LoginPage} from "./pages/LoginPage";
-import { ProductPage } from "./pages/ProductPage";
-import { ProductDetailPage } from "./pages/ProductDetailPage";
-import { CartPage } from "./pages/CartPage";
-import { WishListPage } from "./pages/WishListPage";
-import { SignUpPage } from "./pages/SignUpPage";
-import { ErrorPage } from "./pages/ErrorPage";
+import { Main } from "./pages/Main";
+import { HomePage } from "./pages/HomePage/HomePage";
+import { LoginPage} from "./pages/AuthPage/LoginPage";
+import { ProductPage } from "./pages/ProductPage/ProductPage";
+import { ProductDetailPage } from "./pages/ProductDetail/ProductDetailPage";
+import { CartPage } from "./pages/CartPage/CartPage";
+import { WishListPage } from "./pages/WishList/WishListPage";
+import { SignUpPage } from "./pages/AuthPage/SignUpPage";
+import { ErrorPage } from "./pages/ErrorPage/ErrorPage";
 import { ProductsProvider } from "./store/productsContext";
 import { AuthContextProvider } from "./store/authContext";
 // import Mockman from "mockman-js"
 import { RequireAuth } from "./components/Utils/RequireAuth";
-import { ProfilePage } from "./pages/ProfilePage";
+import { ProfilePage } from "./pages/ProfilePage/ProfilePage";
 import { AddressContextProvider } from "./store/addressContext";
 import { ModalContextProvider } from "./store/modalContext";
-import { CheckOutPage } from "./pages/CheckOutPage";
+import { CheckOutPage } from "./pages/CheckoutPage/CheckOutPage";
 import { ThemeProvider } from "styled-components";
 import { colors,fontFamily } from "./constant";
 
